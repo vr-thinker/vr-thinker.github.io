@@ -1,0 +1,572 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="VR-Thinker: Boosting Video Reward Models through Thinking-with-Image Reasoning"
+    />
+    <meta
+      name="keywords"
+      content="VR-Thinker, Video Reward Model, Visual Reasoning, GRPO, Multimodal"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      VR-Thinker: Boosting Video Reward Models through Thinking-with-Image
+      Reasoning
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="./static/css/index.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+          <a class="navbar-item" href="https://github.com/vr-thinker">
+            <span class="icon">
+              <i class="fas fa-home"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                VR-Thinker: Boosting Video Reward Models through
+                Thinking-with-Image Reasoning
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"> Qunzhong Wang<sup>1,2</sup>,</span>
+                <span class="author-block"> Jie Liu<sup>1</sup>,</span>
+                <span class="author-block"> Jiajun Liang<sup>2</sup>,</span>
+                <span class="author-block"> Yuanxing Zhang<sup>2</sup>,</span>
+                <span class="author-block"> Yilei Jiang<sup>1</sup>,</span>
+                <span class="author-block"> Yaozhi Zheng<sup>1</sup></span>
+              </div>
+              <div class="is-size-5 publication-authors" style="margin-top: 0.25rem">
+                <span class="author-block"> Xintao Wang<sup>2</sup>,</span>
+                <span class="author-block"> Pengfei Wan<sup>2</sup>,</span>
+                <span class="author-block"> Xiangyu Yue<sup>1</sup>,</span>
+                <span class="author-block"> Jiaheng Liu<sup>3</sup></span>
+              </div>
+
+              <div class="is-size-5 publication-authors" style="margin-top: 0.5rem">
+                <span class="author-block"><sup>1</sup>CUHK MMLab,</span>
+                <span class="author-block"
+                  ><sup>2</sup>Kling Team, Kuaishou Technology,</span
+                >
+                <span class="author-block"><sup>3</sup>Nanjing University</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://arxiv.org/pdf/2510.10518"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href="https://arxiv.org/abs/2510.10518"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://github.com/vr-thinker/vrthinker"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <!-- Model Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://huggingface.co/qunwang13/vrthinker"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-robot"></i>
+                      </span>
+                      <span>Model</span>
+                    </a>
+                  </span>
+                  <!-- HF Paper Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://huggingface.co/papers/2510.10518"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="far fa-file-alt"></i>
+                      </span>
+                      <span>HF Paper</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaser Figure -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body has-text-centered">
+          <img
+            src="https://arxiv.org/html/2510.10518v4/x1.png"
+            alt="VR-Thinker overview"
+            style="max-width: 100%; border-radius: 10px"
+          />
+          <h2 class="subtitle has-text-centered" style="margin-top: 1rem">
+            <span class="vrthinker">VR-Thinker</span> equips video reward models
+            with visual reasoning operations, enabling active visual evidence
+            acquisition during chain-of-thought reasoning.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Multimodal reward models face inherent limitations for video
+                preference data: visual inputs consume substantial context
+                budget, forcing RMs to process fewer frames and risking the loss
+                of fine-grained details. Furthermore, all visual information is
+                typically packed into the initial prompt; during the RM's
+                Chain-of-Thought reasoning, the process proceeds purely in text
+                without revisiting or updating visual evidence, which
+                exacerbates forgetting and hallucination.
+              </p>
+              <p>
+                We introduce a novel <b>thinking-with-image</b> framework that
+                equips the reward model with visual reasoning operations (e.g.,
+                <code>SelectFrame</code>) and a configurable visual memory
+                window, enabling active visual evidence acquisition during
+                reasoning. Frame selection allows the model to actively retrieve
+                previously seen frames and acquire unseen visual evidence as new
+                inputs to subsequent reasoning rounds. The configurable memory
+                window retains only the most recently active visual information,
+                keeping the memory footprint stable while extending both the
+                reasoning horizon and the total number of frames the model can
+                process.
+              </p>
+              <p>
+                Building on this framework, we propose
+                <span class="vrthinker">VR-Thinker</span>, the first multimodal
+                reward model capable of visual reasoning. Our training pipeline
+                comprises three stages: (I) <b>Cold Start</b> using curated
+                visual CoT data, (II) <b>Rejection Sampling Fine-Tuning</b> on
+                verified high-quality traces, and (III)
+                <b>GRPO</b> reinforcement learning. A 7B VR-Thinker achieves
+                <b>80.5%</b> on VideoGen Reward, <b>82.3%</b> on GenAI-Bench,
+                and <b>75.6%</b> on MJ-Bench-Video.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+      </div>
+    </section>
+
+    <!-- Method Overview -->
+    <section class="section" style="background-color: #f5f5f5">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">Method</h2>
+
+            <!-- Thinking-with-Image -->
+            <h3 class="title is-4">Thinking-with-Image Framework</h3>
+            <div class="content has-text-justified">
+              <p>
+                Unlike standard chain-of-thought approaches that pack all visual
+                frames into the initial prompt,
+                <span class="vrthinker">VR-Thinker</span> interleaves reasoning
+                with visual operations. The model iteratively performs tool
+                invocations to retrieve additional frames and updates its
+                reasoning by incorporating the tool-execution outcomes.
+              </p>
+              <p>Key components:</p>
+              <ul>
+                <li>
+                  <b>Tool Invocation (<code>SelectFrame</code>)</b>: The model
+                  actively retrieves frames from the full video when missing
+                  evidence prevents a definitive judgment, enabling on-demand
+                  visual evidence acquisition.
+                </li>
+                <li>
+                  <b>Window Memory</b>: Each tool-execution outcome remains
+                  active for a preset number of rounds before being deliberately
+                  forgotten, keeping the total context usage stable regardless
+                  of how many reasoning steps are taken.
+                </li>
+                <li>
+                  <b>Reasoning Format</b>: XML-style tags
+                  (<code>&lt;Snapshot&gt;</code>, <code>&lt;Think&gt;</code>,
+                  <code>&lt;Recommend Answer&gt;</code>,
+                  <code>&lt;Answer&gt;</code>) delineate functional areas,
+                  ensuring clarity and consistency.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Training Pipeline -->
+            <h3 class="title is-4">3-Stage Training Pipeline</h3>
+            <div class="content has-text-justified">
+              <div class="columns is-centered" style="margin-top: 1rem">
+                <div class="column is-one-third">
+                  <div class="box" style="height: 100%">
+                    <h4 class="title is-5 has-text-centered">
+                      Stage I: Cold Start
+                    </h4>
+                    <p>
+                      Using curated visual CoT data generated by GPT-4o, we
+                      instill basic textual reasoning skills and tool-calling
+                      syntax via SFT. Two-stage filtering ensures format
+                      compliance and judgment accuracy.
+                    </p>
+                  </div>
+                </div>
+                <div class="column is-one-third">
+                  <div class="box" style="height: 100%">
+                    <h4 class="title is-5 has-text-centered">
+                      Stage II: Rejection Sampling FT
+                    </h4>
+                    <p>
+                      The Stage I model generates multiple CoT samples per
+                      input. Only traces where all per-dimension and overall
+                      judgments are correct are retained for SFT, consolidating
+                      high-quality reasoning.
+                    </p>
+                  </div>
+                </div>
+                <div class="column is-one-third">
+                  <div class="box" style="height: 100%">
+                    <h4 class="title is-5 has-text-centered">
+                      Stage III: GRPO
+                    </h4>
+                    <p>
+                      Group Relative Policy Optimization with rule-based rewards
+                      (format + accuracy + CoT gain + exploratory incentive)
+                      reinforces multimodal reasoning capabilities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reward Design -->
+            <h3 class="title is-4">Reward Design</h3>
+            <div class="content has-text-justified">
+              <p>The GRPO stage uses a composite reward signal:</p>
+              <ul>
+                <li>
+                  <b>Format Reward</b>: Ensures correct XML tag structure and
+                  answer format compliance.
+                </li>
+                <li>
+                  <b>Accuracy Reward</b>: Evaluates both per-dimension judgments
+                  (TA, MQ, VQ, OA) and overall preference, expanding the answer
+                  space to 3<sup>d+1</sup> to reduce misleading reward signals.
+                </li>
+                <li>
+                  <b>CoT Gain Reward</b>: Rewards accuracy improvement between
+                  successive reasoning updates, encouraging the model to
+                  leverage visual evidence for better conclusions.
+                </li>
+                <li>
+                  <b>Exploratory Incentive</b>: Enforces a lower bound on
+                  multimodal reasoning proportion to prevent the model from
+                  defaulting to purely textual reasoning.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qualitative Results -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">Qualitative Example</h2>
+            <div class="content has-text-centered">
+              <img
+                src="https://arxiv.org/html/2510.10518v4/x2.png"
+                alt="VR-Thinker qualitative case"
+                style="max-width: 100%; border-radius: 10px"
+              />
+              <p class="has-text-justified" style="margin-top: 1rem">
+                When frames are downsampled, key information might not be
+                included in the input.
+                <span class="vrthinker">VR-Thinker</span> actively retrieves
+                frames via <code>SelectFrame</code>, ensuring the correctness of
+                such cases. The model reasons about what visual evidence is
+                missing and strategically requests specific frames to resolve
+                ambiguity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section" style="background-color: #f5f5f5">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">Results</h2>
+            <div class="content">
+              <p class="has-text-centered">
+                <span class="vrthinker">VR-Thinker</span> achieves
+                state-of-the-art performance across three major video preference
+                benchmarks.
+              </p>
+
+              <div class="table-container">
+                <table
+                  class="table is-bordered is-striped is-hoverable is-fullwidth"
+                >
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Size</th>
+                      <th>VideoGen-Reward</th>
+                      <th>GenAI-Bench</th>
+                      <th>MJ-Bench-Video</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colspan="5" style="background-color: #fafafa; font-style: italic">
+                        Classifier-based Reward Models
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>VideoScore</td>
+                      <td>7B</td>
+                      <td>50.2</td>
+                      <td>70.9</td>
+                      <td>63.5</td>
+                    </tr>
+                    <tr>
+                      <td>VideoReward</td>
+                      <td>2B</td>
+                      <td>73.8</td>
+                      <td>73.1</td>
+                      <td>62.6</td>
+                    </tr>
+                    <tr>
+                      <td>VisionReward</td>
+                      <td>13B</td>
+                      <td>68.4</td>
+                      <td>72.7</td>
+                      <td>65.2</td>
+                    </tr>
+                    <tr>
+                      <td colspan="5" style="background-color: #fafafa; font-style: italic">
+                        Generative-based Reward Models
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>LiFT</td>
+                      <td>13B</td>
+                      <td>57.9</td>
+                      <td>59.4</td>
+                      <td>51.4</td>
+                    </tr>
+                    <tr>
+                      <td>UnifiedReward</td>
+                      <td>7B</td>
+                      <td>78.6</td>
+                      <td>76.8</td>
+                      <td>69.5</td>
+                    </tr>
+                    <tr>
+                      <td colspan="5" style="background-color: #fafafa; font-style: italic">
+                        Reasoning-based Reward Models
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>UnifiedReward-Think</td>
+                      <td>7B</td>
+                      <td>79.1</td>
+                      <td>80.4</td>
+                      <td>71.9</td>
+                    </tr>
+                    <tr style="background-color: #e8f5e9; font-weight: bold">
+                      <td>VR-Thinker</td>
+                      <td>7B</td>
+                      <td>80.5</td>
+                      <td>82.3</td>
+                      <td>75.6</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="is-size-7 has-text-grey" style="margin-top: 0.5rem">
+                  Numbers are <code>diff</code>(%) on each benchmark, taken from
+                  the paper's Table 1 (main results).
+                </p>
+              </div>
+
+              <h3 class="title is-4 has-text-centered" style="margin-top: 2rem">
+                4-Dimension Evaluation
+              </h3>
+              <p class="has-text-justified">
+                Videos are scored across four complementary dimensions, each
+                contributing to the overall preference judgment:
+              </p>
+              <div class="columns is-centered" style="margin-top: 1rem">
+                <div class="column is-3">
+                  <div class="box has-text-centered">
+                    <p class="heading">Text Alignment</p>
+                    <p class="title is-4" style="color: #4caf50">TA</p>
+                    <p class="is-size-7">
+                      How well video content matches the text prompt
+                    </p>
+                  </div>
+                </div>
+                <div class="column is-3">
+                  <div class="box has-text-centered">
+                    <p class="heading">Motion Quality</p>
+                    <p class="title is-4" style="color: #2196f3">MQ</p>
+                    <p class="is-size-7">
+                      Naturalness and smoothness of motion
+                    </p>
+                  </div>
+                </div>
+                <div class="column is-3">
+                  <div class="box has-text-centered">
+                    <p class="heading">Visual Quality</p>
+                    <p class="title is-4" style="color: #ff9800">VQ</p>
+                    <p class="is-size-7">
+                      Resolution, clarity, and visual artifacts
+                    </p>
+                  </div>
+                </div>
+                <div class="column is-3">
+                  <div class="box has-text-centered">
+                    <p class="heading">Overall Assessment</p>
+                    <p class="title is-4" style="color: #9c27b0">OA</p>
+                    <p class="is-size-7">Holistic quality judgment</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{wang2025vrthinker,
+  title     = {VR-Thinker: Boosting Video Reward Models through Thinking-with-Image Reasoning},
+  author    = {Wang, Qunzhong and Liu, Jie and Liang, Jiajun and Jiang, Yilei and Zhang, Yuanxing and Chen, Jinyuan and Zheng, Yaozhi and Wang, Xintao and Wan, Pengfei and Yue, Xiangyu and Liu, Jiaheng},
+  journal   = {arXiv preprint arXiv:2510.10518},
+  year      = {2025},
+}</code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <a class="icon-link" href="https://arxiv.org/pdf/2510.10518">
+            <i class="fas fa-file-pdf"></i>
+          </a>
+          <a
+            class="icon-link"
+            href="https://github.com/vr-thinker/vrthinker"
+            class="external-link"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This website template is borrowed from
+                <a href="https://github.com/nerfies/nerfies.github.io"
+                  >Nerfies</a
+                >, licensed under a
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  >Creative Commons Attribution-ShareAlike 4.0 International
+                  License</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
